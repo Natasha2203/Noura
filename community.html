@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Communities</title>
+  <link rel="stylesheet" href="navigationbar.css" />
+  <link rel="stylesheet" href="communitycss.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar_container">
+      <a href="/" id="navbar_logo">
+        <img src="/images/NouraLogo.png" alt="NEXT Logo" class="logo" />
+      </a>
+<ul class="navbar_menu">
+        <li class="navbar_item"><a href="/index.html" class="navbar_links">Home</a></li>
+        <li class="navbar_item"><a href="/community.html" class="navbar_links">Community</a></li>
+        <li class="navbar_item"><a href="/nutrition.html" class="navbar_links">Information nutrition</a></li>
+        <li class="navbar_item"><a href="/exercise.html" class="navbar_links">Information exercise</a></li>
+        <li class="navbar_item"><a href="/templates.html" class="navbar_links">Templates</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <h1>Explore Communities</h1>
+
+    <div class="filters">
+      <label for="interest">Filter:</label>
+      <select id="interest">
+        <option value="all">All</option>
+        <option value="fitness">Fitness</option>
+        <option value="nutrition">Nutrition</option>
+        <option value="mindset">Mindset</option>
+      </select>
+    </div>
+
+    <div class="community-grid">
+      <div class="community-card" data-category="fitness">
+        <h2>Home Gym Tips</h2>
+        <p>Get advice on setting up your own gym.</p>
+        <button>Join Group</button>
+      </div>
+      <div class="community-card" data-category="nutrition">
+        <h2>Meal Prep Fans</h2>
+        <p>Share your best food prep ideas.</p>
+        <button>Join Group</button>
+      </div>
+      <div class="community-card" data-category="mindset">
+        <h2>Fitness Motivation</h2>
+        <p>Stay consistent with community support.</p>
+        <button>Join Group</button>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h3>Explore Your Matches</h3>
+      <p>See recommended communities now.</p>
+      <a href="#" class="browse-btn">Browse Groups</a>
+    </div>
+  </main>
+
+  <script>
+    const filter = document.getElementById('interest');
+    const cards = document.querySelectorAll('.community-card');
+
+    filter.addEventListener('change', () => {
+      const value = filter.value;
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        card.style.display = (value === 'all' || category === value) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness & Nutrition</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navigationbar.css" />
+  <style>
+    .main-content {
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+    }
+
+    .main-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .illustrations {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .illustration-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .illustration-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .illustration-img {
+      max-width: 45%;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .illustration-text {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .illustration-row,
+      .illustration-row.reverse {
+        flex-direction: column;
+      }
+
+      .illustration-img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar_container">
+      <a href="/" id="navbar_logo">
+        <img src="/images/NouraLogo.png" alt="NEXT Logo" class="logo" />
+      </a>
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar_menu">
+        <li class="navbar_item"><a href="/index.html" class="navbar_links">Home</a></li>
+        <li class="navbar_item"><a href="/community.html" class="navbar_links">Community</a></li>
+        <li class="navbar_item"><a href="/nutrition.html" class="navbar_links">Information nutrition</a></li>
+        <li class="navbar_item"><a href="/exercise.html" class="navbar_links">Information exercise</a></li>
+        <li class="navbar_item"><a href="/templates.html" class="navbar_links">Templates</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+
+  <main class="main-content">
+    <h1 class="main-title">Exercise</h1>
+
+    <!-- YouTube Video -->
+    <div class="video-container">
+      <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="YouTube video player" frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>
+    </div>
+
+    <!-- Illustration Section -->
+    <section class="illustrations">
+      <h2>Illustrations</h2>
+
+      <div class="illustration-row">
+        <img src="/images/images (1).jpeg" alt="Illustration 1" class="illustration-img">
+        <div class="illustration-text">
+          <h3>Exercise Tip 1</h3>
+          <p>Start your day with a dynamic warm-up to activate muscles and prevent injury.</p>
+        </div>
+      </div>
+
+      <div class="illustration-row reverse">
+        <div class="illustration-text">
+          <h3>Exercise Tip 2</h3>
+          <p>Consistency is key — even 15 minutes a day can make a difference.</p>
+        </div>
+        <img src="/images/images (2).jpeg" alt="Illustration 2" class="illustration-img">
+      </div>
+
+      <div class="illustration-row">
+        <img src="/images/images (3).jpeg" alt="Illustration 3" class="illustration-img">
+        <div class="illustration-text">
+          <h3>Exercise Tip 3</h3>
+          <p>Strength training builds muscle and supports bone health — don't skip it.</p>
+        </div>
+      </div>
+
+      <div class="illustration-row reverse">
+        <div class="illustration-text">
+          <h3>Exercise Tip 4</h3>
+          <p>Rest days are just as important — they allow your body to recover and grow stronger.</p>
+        </div>
+        <img src="/images/images.jpeg" alt="Illustration 4" class="illustration-img">
+      </div>
+    </section>
+  </main>
+</body>
+</html>

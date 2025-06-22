@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness & nutrition</title>
+  <link rel="stylesheet" href="templatesstyles.css">
+  <link rel="stylesheet" href="navigationbar.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar_container">
+      <a href="/" id="navbar_logo">
+        <img src="/images/NouraLogo.png" alt="NEXT Logo" class="logo" />
+      </a>
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar_menu">
+        <li class="navbar_item"><a href="/index.html" class="navbar_links">Home</a></li>
+        <li class="navbar_item"><a href="/community.html" class="navbar_links">Community</a></li>
+        <li class="navbar_item"><a href="/nutrition.html" class="navbar_links">Information nutrition</a></li>
+        <li class="navbar_item"><a href="/exercise.html" class="navbar_links">Information exercise</a></li>
+        <li class="navbar_item"><a href="/templates.html" class="navbar_links">Templates</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <h1 class="main-title">Choose Your Fitness Goal</h1>
+
+    <div class="filter-group">
+      <label for="goal-select">Select your goal:</label>
+      <select id="goal-select">
+        <option value="">--Please choose an option--</option>
+        <option value="muscle">Muscle Gain</option>
+        <option value="fatloss">Fat Loss</option>
+        <option value="endurance">Endurance</option>
+      </select>
+    </div>
+
+    <div id="template-content" class="template-content">
+      <!-- Template info will appear here -->
+    </div>
+  </main>
+
+  <script>
+    const select = document.getElementById('goal-select');
+    const content = document.getElementById('template-content');
+
+    const templates = {
+      muscle: `
+        <h2>Muscle Gain Template</h2>
+        <p>Focus on progressive overload, high protein intake, and compound lifts.</p>
+        <a href="/templates/muscle.html">View Full Template</a>
+      `,
+      fatloss: `
+        <h2>Fat Loss Template</h2>
+        <p>Focus on calorie deficit, cardio routines, and strength maintenance.</p>
+        <a href="/templates/fatloss.html">View Full Template</a>
+      `,
+      endurance: `
+        <h2>Endurance Template</h2>
+        <p>Focus on aerobic training, interval running, and stamina building.</p>
+        <a href="/templates/endurance.html">View Full Template</a>
+      `
+    };
+
+    select.addEventListener('change', () => {
+      const goal = select.value;
+      content.innerHTML = templates[goal] || '';
+    });
+  </script>
+</body>
+</html>
